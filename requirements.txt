@@ -1,0 +1,73 @@
+# ─── SPIDER AI System — Requirements ─────────────────────────────────────────
+
+# LLM / AI
+ollama                      # Local LLM (Llama 3, Mistral, etc.)
+langchain                   # LLM orchestration
+langchain-ollama            # Ollama integration for LangChain
+langchain-community         # Community tools
+
+# Voice — Speech-to-Text
+faster-whisper              # Local multilingual STT (Hindi + English)
+sounddevice                 # Microphone recording
+numpy                       # Audio array handling
+scipy                       # Audio processing
+
+# Voice — Text-to-Speech
+edge-tts                    # Microsoft neural TTS (free, female voice)
+pygame                      # Audio playback
+
+# Wake Word Detection
+openwakeword                # "Hey SPIDER" wake word
+
+# Voice Passkey / Speaker Verification
+resemblyzer                 # MFCC voice embeddings for passkey auth
+
+# Memory / Vector DB
+chromadb                    # Persistent vector memory
+sentence-transformers       # Embeddings for ChromaDB
+
+# Web Scraping / Search
+playwright                  # Headless browser scraping
+beautifulsoup4              # HTML parsing
+requests                    # HTTP requests
+httpx                       # Async HTTP
+duckduckgo-search           # Free web search (no API key)
+
+# File & System Control
+pathlib                     # Path management (stdlib)
+psutil                      # Process / system info
+pyautogui                   # GUI automation (open apps, click)
+pygetwindow                 # Window management
+keyboard                    # Keyboard shortcuts
+pywin32                     # Windows-specific system control
+
+# Resume — .docx editing
+python-docx                 # Read/write Word documents
+pypdf                       # PDF reading (backup)
+
+# Language Detection
+langdetect                  # Detect Hindi / English / mix
+
+# Phone Control
+adb-shell                   # Python ADB bridge
+pure-python-adb             # ADB over USB/Wi-Fi
+
+# Configuration & Security
+pyyaml                      # YAML config parsing
+cryptography                # Encrypt secrets / passkey data
+bcrypt                      # Hash text passkeys
+
+# API Server (for phone companion)
+fastapi                     # REST + WebSocket API
+uvicorn                     # ASGI server
+websockets                  # WebSocket support
+
+# Utilities
+rich                        # Beautiful terminal output
+python-dotenv               # .env file support
+loguru                      # Better logging
+schedule                    # Task scheduler
+tqdm                        # Progress bars
+
+# Code Execution (for code writer skill)
+subprocess32                # Subprocess management

@@ -1,0 +1,82 @@
+# ─── SPIDER Configuration ────────────────────────────────────────────────────
+
+spider:
+  name: "SPIDER"
+  version: "1.0.0"
+
+# Voice Settings
+voice:
+  wake_word: "hey spider"
+  stt_model: "base"              # faster-whisper model: tiny, base, small, medium
+  stt_language: "auto"           # auto-detect Hindi/English
+  tts_voice: "en-US-JennyNeural" # Edge-TTS female neutral American voice
+  tts_rate: "+0%"
+  tts_volume: "+0%"
+  sample_rate: 16000
+  channels: 1
+  silence_threshold: 500         # silence duration (ms) before stop recording
+  max_record_seconds: 30
+
+# Security
+security:
+  passkey_type: "voice"          # "voice" or "text" or "both"
+  voice_passkey_phrase: ""       # Set after enrollment
+  voice_passkey_embedding: ""    # Stored after enrollment
+  text_passkey_hash: ""          # bcrypt hash set after enrollment
+  max_auth_attempts: 3
+  session_timeout_minutes: 60    # Auto-lock after inactivity
+
+# LLM / Brain Settings
+brain:
+  provider: "groq"
+  model: "groq/compound"           # Groq compound high-speed model
+  groq_api_key: ""
+  ollama_url: "http://localhost:11434"
+  temperature: 0.7
+  max_tokens: 2048
+  system_prompt: |
+    You are SPIDER, a personal AI assistant. You are intelligent, helpful, and can
+    speak in English, Hindi, or a natural mix of both (Hinglish). You have a friendly,
+    confident personality. You control the user's laptop and phone, manage files,
+    write code, search the web, and help with anything they need. Always respond
+    naturally and conversationally. When executing tasks, confirm what you did.
+    If you don't know something, say so honestly and offer to search the web.
+
+# Memory
+memory:
+  db_path: "data/memory"
+  collection_name: "spider_memory"
+  max_short_term_turns: 20       # Keep last N turns in context
+  embedding_model: "all-MiniLM-L6-v2"
+
+# File Manager
+files:
+  default_workspace: ""          # Auto-set to user's home dir
+  allowed_drives: ["C", "D"]     # Drives SPIDER can access
+
+# Phone / ADB
+phone:
+  adb_path: "adb"                # Path to adb.exe (must be in PATH)
+  device_serial: ""              # Auto-detected on connect
+  ws_port: 8765                  # WebSocket port for phone companion
+
+# Web Search
+search:
+  engine: "duckduckgo"           # "duckduckgo" or "google"
+  max_results: 5
+  timeout: 15
+
+# Resume
+resume:
+  default_path: "data/resumes/resume.docx"
+
+# API Server
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+# Logging
+logging:
+  level: "INFO"
+  log_file: "data/logs/spider.log"
+  max_log_size_mb: 10
