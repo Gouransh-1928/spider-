@@ -144,5 +144,3 @@ SPIDER/
 ```
 =======
 # spider-
-voice controlled AI assistant build with python that has access to all my pc and my phone , it also has a security pass key before initial start of the whole program . this program can write codes for me, do web search and much more.
-f924d56cf7746a0725677060478aaf64e420911a
